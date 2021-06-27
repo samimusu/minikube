@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  # service名
+  name: http-service
+  labels:
+    app: http-app
+spec:
+  selector:
+    app: http-app
+  # 公開するport
+  ports:
+    - port: 8080
+      targetPort: http-port
+  type: NodePort
